@@ -5,6 +5,7 @@ function WatchList({list, removeMovie}) {
     const movieDisplay = list.map((movie, index) => {
         return (
             <MovieCard 
+                key={index}
                 movie={movie}
                 list={list}
                 removeMovie={removeMovie}

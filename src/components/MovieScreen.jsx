@@ -5,6 +5,7 @@ function MovieScreen({addMovie, movieList, removeMovie, list, page, setPage}) {
     const movieDisplay = movieList.map((movie, index) => {
         return (
             <MovieCard 
+                key={index}
                 addMovie={addMovie} 
                 movie={movie} 
                 list={list} 
@@ -26,7 +27,7 @@ function MovieScreen({addMovie, movieList, removeMovie, list, page, setPage}) {
             <h1>Brooklyn's Movie Theatre</h1>
             <h3>Add a movie to your watchlist!</h3>
             <div className="btn-container">
-                <button onClick={page !== 1 && decrement}>Previous</button>
+                <button onClick={ page !== 1 ? decrement : null}>Previous</button>
                 <button onClick={increment}>Next</button>
             </div>
             <div className="movie-container">{movieDisplay}</div>
